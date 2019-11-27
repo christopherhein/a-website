@@ -4,7 +4,7 @@
 [cols="a,a,a,a"]
 |===
 | *API Version* | *Website Status* | *Build Status* | *License* 
-| image::https://img.shields.io/badge/version-v0.0.1-red.svg[link="https://github.com/christopherhein/github-controller/blob/master/LICENSE"] | *<coming soon>*
+| image::https://img.shields.io/badge/version-v0.0.1-red.svg[link="https://github.com/christopherhein/github-controller/blob/master/LICENSE"] | image::https://api.netlify.com/api/v1/badges/7961f109-ede5-4d8d-ad8d-a542e034c4c0/deploy-status[link="https://app.netlify.com/sites/awsctrl/deploys"]
  | image::https://travis-ci.com/christopherhein/github-controller.svg?branch=master[link="https://travis-ci.com/christopherhein/github-controller"] | image::https://img.shields.io/badge/license-Apache%202.0-blue.svg[link="https://github.com/christopherhein/github-controller/blob/master/LICENSE"]
 |===
 
