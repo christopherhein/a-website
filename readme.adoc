@@ -1,0 +1,14 @@
+= Website
+:toc: macro
+
+[cols="a,a,a,a"]
+|===
+| *API Version* | *Website Status* | *Build Status* | *License* 
+| image::https://img.shields.io/badge/version-v0.0.1-red.svg[link="https://github.com/christopherhein/github-controller/blob/master/LICENSE"] | *<coming soon>*
+ | image::https://travis-ci.com/christopherhein/github-controller.svg?branch=master[link="https://travis-ci.com/christopherhein/github-controller"] | image::https://img.shields.io/badge/license-Apache%202.0-blue.svg[link="https://github.com/christopherhein/github-controller/blob/master/LICENSE"]
+|===
+
+toc::[]
+
+AWS Controller website documents builds the static site for managing features,
+documentation, sample code, blogs, etc.
