@@ -1,0 +1,16 @@
+{{ define "title" }}
+{{ site.Title }} | Home
+{{ end }}
+
+{{ define "main" }}
+{{ partial "navbar.html" . }}
+{{ partial "home/hero.html" . }}
+
+<section class="section">
+    <div class="container">
+{{ partial "home/features.html" . }}
+{{ partial "home/samples.html" . }}
+{{ partial "footer.html" . }}
+    </div>
+</section>
+{{ end }}

@@ -1,0 +1,22 @@
+{{ $title      := site.Title }}
+{{ $image      := site.Params.heroImage }}
+{{ $description := site.Params.description | markdownify }}
+<section class="hero is-medium is-primary">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title is-size-1 is-size-2-mobile has-text-weight-light{{ if $description }} is-spaced{{ end }}">
+        {{ $title }}
+      </p>
+      {{ with $description }}
+      <p class="subtitle is-size-2 is-size-3-mobile has-text-weight-light">
+        {{ . }}
+      </p>
+      {{ end }}
+      {{ with $image }}
+      <figure class="image is-128x128">
+        <img src="{{ $image }}">
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>

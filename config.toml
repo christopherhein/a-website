@@ -1,0 +1,114 @@
+title = "AWS Controller"
+baseURL = "https://awsctrl.io"
+disableKinds = ["sitemap", "taxonomy", "taxonomyTerm"]
+languageCode = "en-us"
+pygmentsCodefences = true
+pygmentsStyle = "monokai"
+
+[params]
+description = "The foundation for managing AWS with Kubernetes"
+# heroImage = "/images/cloud9-hero.png"
+sansseriffont = "Open Sans"
+monospacefont = "Fira Mono"
+fontawesomeversion = "5.12.0"
+js = ["jquery-3.3.1", "app"]
+# logo = "https://raw.githubusercontent.com/cncf/artwork/master/cncf/horizontal/color/cncf-color.png"
+# favicon = "https://raw.githubusercontent.com/cncf/artwork/master/cncf/icon/color/cncf-icon-color.png"
+
+[params.logos]
+navbar = "/images/aws-logo.png"
+footer = "/images/aws-logo.png"
+panel = "/images/aws-logo.png"
+
+[params.social.github]
+name = "GitHub"
+url  = "https://git.awsctrl.io"
+icon = "github"
+color = "black"
+
+# [params.social.slack]
+# name = "Slack"
+# url = "https://awsdeveloper.slack.com/"
+# icon = "slack"
+# color = "slack-green"
+
+# [params.social.twitter]
+# name = "Twitter"
+# url = "https://twitter.com/awsctrl"
+# icon = "twitter"
+# color = "twitter-blue"
+# handle = "awsctrl"
+
+[[params.fonts]]
+name = "Open Sans"
+sizes = [300, 400, 600, 700]
+
+[[params.fonts]]
+name = "Fira Mono"
+sizes = [400]
+
+[params.navbar]
+fixed = true
+shadow = false
+
+[params.feature]
+headline = "Manage your entire stack with Kubernetes. From application to infrastructure."
+
+[[params.features]]
+title = "Integrated Deployments"
+description = "Using the AWS Controller you can provision your entire stack with `kubectl`. No need to wrangle complex CI/CD pipelines running descrete tooling like `tf`."
+icon = "fas fa-rocket"
+
+[[params.features]]
+title = "Easy to Use"
+description = "We've made the AWS Contrller simple to [get started, install](/docs/getting-started/) the `awsctrl` binary and run `awctrl install | kubectl apply -f -`"
+icon = "fas fa-laptop-code"
+url = "/docs"
+
+[[params.features]]
+title = "Extensible"
+description = "With pure Kubernetes tooling you can integate with Weaveworks `flux`, Spinnaker, Jenkins, any tool you use to deploy applications will easily integrate."
+icon = "fas fa-cog"
+url = "/docs"
+
+[params.sample]
+headline = "Examples"
+
+[[params.samples]]
+title = "Cloud9 Environments"
+description = "Deploy AWS Cloud9 Environments from Kubernetes. Easily create development environments for your developers."
+image = "/images/cloud9-samples.png"
+url = "/docs"
+
+[[params.samples]]
+title = "ECR Repositories"
+description = "Manage fundamental components for your operations like Amazon ECR Repositories. All done declaratively with the Application code for easy region expansion."
+image = "/images/ecr-samples.png"
+url = "/docs"
+
+[[params.samples]]
+title = "API Gateway"
+description = "Do more complex interations wlike integrating Amazon Lambda functions with Containers hosted on Kubernetes through Amazon API Gateway."
+image = "/images/apigateway-samples.png"
+url = "/docs"
+
+
+[[menu.navbar]]
+name = "Documentation"
+url = "/docs"
+weight = 1
+
+[[menu.navbar]]
+name = "Get Started"
+url = "/docs/getting-started/"
+weight = 2
+
+# [[menu.navbar]]
+# name = "Examples"
+# url = "/docs/examples/"
+# weight = 3
+
+[[menu.navbar]]
+name = "API"
+url = "/reference"
+weight = 4

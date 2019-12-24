@@ -1,0 +1,124 @@
+---
+title: Getting started
+weight: 2
+docs: docs
+description: From zero to AWS resources deployed with Kubernetes.
+---
+
+<div class="columns section-top">
+	<div class="column"></div>
+	<div class="column is-four-fifths box hero">
+		<div class="hero-body columns">
+			<div class="column is-four-fifths">
+				<h1 class="title">Sign up for an AWS account</h1>
+				<p>There are no upfront charges or any term commitments to create an AWS account.</p>
+				<a href="https://portal.aws.amazon.com/billing/signup?redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation" target="_blank"> 
+					<button class="button is-primary is-medium section-top">Create an AWS account</button> 
+				</a>
+			</div>
+			<div class="column section-top">
+				<img src="https://d0.awsstatic.com/logos/powered-by-aws.png"/>
+			</div>
+		</div>
+	</div>
+	<div class="column"></div>
+</div>
+
+<div class="columns section-top">
+	<div class="column"></div>
+	<div class="column is-four-fifths box hero">
+		<div class="hero-body columns">
+			<div class="column is-half">
+				<h1 class="title">Provision Cluster</h1>
+				<p>AWS Controller can run on any cluster whether it's <a href="https://eksctl.io">eksctl</a>, <a href="https://aws.amazon.com/eks/">Amazon EKS</a>,  <a href="https://sigs.k8s.io/kind/">Kind</a>, <a href="https://minikube.sigs.k8s.io/">Minikube</a> or any other.</p>
+				<ul>
+					<li>• <i>You need is an IAM Role with <code>AdministratorAccess</code></i></li>
+				</ul>
+			</div>
+			<div class="column is-half">
+				<pre>
+					<code>
+export NAME=awsctrl
+eksctl create cluster --name=${NAME}
+eksctl utils associate-iam-oidc-provider --cluster=${NAME} --approve
+eksctl create iamserviceaccount --cluster=${NAME} --name=default --namespace=awsctrl-system --attach-policy-arn=arn:aws:iam::aws:policy/AdministratorAccess  --approve
+					</code>
+				</pre>
+			</div>
+		</div>
+	</div>
+	<div class="column"></div>
+</div>
+
+<div class="columns section-top">
+	<div class="column"></div>
+	<div class="column is-four-fifths box hero">
+		<div class="hero-body columns">
+			<div class="column is-half">
+				<h1 class="title">Install <code>awsctrl</code> CLI</h1>
+				<p>The <code>awsctrl</code> CLI allows you to install and manage the AWS Controller installed in your clusters.</p>
+				<ul>
+					<li>• <i>Install <a href="https://golang.org/">Golang®</a> if not already on your machine.</i></li>
+				</ul>
+				
+			</div>
+			<div class="column is-half">
+				<pre>
+					<code>
+go install go.awsctrl.io/manager/cmd/awsctrl
+					</code>
+				</pre>
+			</div>
+		</div>
+	</div>
+	<div class="column"></div>
+</div>
+
+<div class="columns section-top">
+	<div class="column"></div>
+	<div class="column is-four-fifths box hero">
+		<div class="hero-body columns">
+			<div class="column is-half">
+				<h1 class="title">Install <code>awsctrl</code></h1>
+				<p>Once you have a cluster you can install it into your cluster using the <code>awsctrl</code> CLI.</p>
+			</div>
+			<div class="column is-half">
+				<pre>
+					<code>
+awsctrl install manager | kubectl apply -f -
+awsctrl install config | kubectl apply -f -
+					</code>
+				</pre>
+			</div>
+		</div>
+	</div>
+	<div class="column"></div>
+</div>
+
+<div class="columns section-top">
+	<div class="column"></div>
+	<div class="column is-four-fifths box hero">
+		<div class="hero-body columns">
+			<div class="column is-half">
+				<h1 class="title">Create AWS Resources</h1>
+				<p>After AWS Controller is running you can deploy AWS Resources like this example ECR Repository.</p>
+			</div>
+			<div class="column is-half">
+				<pre>
+					<code>
+cat &gt;ecr.yaml &lt;&lt;EOF
+apiVersion: ecr.awsctrl.io/v1alpha1
+kind: Repository
+metadata:
+  name: repository-sample
+spec: 
+  repositoryName: awsctrl-test
+EOF
+kubectl apply -f ecr.yaml
+					</code>
+				</pre>
+			</div>
+		</div>
+	</div>
+	<div class="column"></div>
+</div>
